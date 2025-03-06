@@ -530,8 +530,10 @@ int parallel_main(int argc, char* argv[]) {
       G.del();
     } else {
 #ifndef HYPER
+      startTime();
       graph<asymmetricVertex> G =
         readGraph<asymmetricVertex>(iFile,compressed,symmetric,binary,mmap); //asymmetric graph
+      nextTime("Reading time");
 #else
       hypergraph<asymmetricVertex> G =
         readHypergraph<asymmetricVertex>(iFile,compressed,symmetric,binary,mmap); //asymmetric graph
