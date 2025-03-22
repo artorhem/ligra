@@ -470,6 +470,7 @@ template<class vertex>
 void Compute(hypergraph<vertex>&, commandLine);
 
 int parallel_main(int argc, char* argv[]) {
+  _flexograph_profile::MemoryCounter memoryCounter;
   commandLine P(argc,argv," [-s] <inFile>");
   char* iFile = P.getArgument(0);
   bool symmetric = P.getOptionValue("-s");
